@@ -1,6 +1,6 @@
 import React from 'react'
 import Expenses from "./components/Expenses/Expenses";
-
+import NewExpense from './components/NewExpense/NewExpense';
 // import Ex from './components/ExpenseItem';
 
 // import { ExpenseItem as Ex } from './components/ExpenseItem'
@@ -39,6 +39,11 @@ const App = () => {
     },
   ];
 
+  const addExpenseHandler = expense => {
+    console.log('In app.js')
+    console.log(expense)
+  }
+
   // return React.createElement('div',
   //   {},
   //   React.createElement('h2', {}, "Let's get started!"),
@@ -47,7 +52,7 @@ const App = () => {
 
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
       <Expenses items={expenses}></Expenses>
       {/* <ExpenseItem expense={expenses[0]}></ExpenseItem>
       <ExpenseItem expense={expenses[1]}></ExpenseItem>
